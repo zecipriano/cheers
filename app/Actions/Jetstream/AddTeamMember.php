@@ -19,9 +19,10 @@ class AddTeamMember implements AddsTeamMembers
      * @param  mixed  $team
      * @param  string  $email
      * @param  string|null  $role
+     *
      * @return void
      */
-    public function add($user, $team, string $email, string $role = null)
+    public function add($user, $team, string $email, ?string $role = null)
     {
         Gate::forUser($user)->authorize('addTeamMember', $team);
 
@@ -32,7 +33,8 @@ class AddTeamMember implements AddsTeamMembers
         AddingTeamMember::dispatch($team, $newTeamMember);
 
         $team->users()->attach(
-            $newTeamMember, ['role' => $role]
+            $newTeamMember,
+            ['role' => $role]
         );
 
         TeamMemberAdded::dispatch($team, $newTeamMember);
@@ -44,6 +46,7 @@ class AddTeamMember implements AddsTeamMembers
      * @param  mixed  $team
      * @param  string  $email
      * @param  string|null  $role
+     *
      * @return void
      */
     protected function validate($team, string $email, ?string $role)
@@ -68,7 +71,7 @@ class AddTeamMember implements AddsTeamMembers
         return array_filter([
             'email' => ['required', 'email', 'exists:users'],
             'role' => Jetstream::hasRoles()
-                            ? ['required', 'string', new Role]
+                            ? ['required', 'string', new Role()]
                             : null,
         ]);
     }
@@ -78,6 +81,7 @@ class AddTeamMember implements AddsTeamMembers
      *
      * @param  mixed  $team
      * @param  string  $email
+     *
      * @return \Closure
      */
     protected function ensureUserIsNotAlreadyOnTeam($team, string $email)
