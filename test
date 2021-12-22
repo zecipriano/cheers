@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ "$1" == "all" ]; then
+
+    # PHPUnit
+    echo -e "\n---------- (1/2) PHPUnit ----------\n"
+    ./vendor/bin/sail exec laravel.test ./vendor/bin/phpunit
+
+    # phpcs
+    echo -e "\n---------- (2/2) PHP CodeSniffer ----------\n"
+    ./vendor/bin/sail exec laravel.test ./vendor/bin/phpcs
+
+elif [ "$1" == "tdd" ]; then
+
+    ./vendor/bin/sail exec laravel.test ./vendor/bin/phpunit --cache-result --order-by=defects --stop-on-failure
+
+elif [ "$1" == "cs" ]; then
+
+    ./vendor/bin/sail exec laravel.test ./vendor/bin/phpcs
+
+elif [ "$1" == "cbf" ]; then
+
+    ./vendor/bin/sail exec laravel.test ./vendor/bin/phpcbf
+
+else
+
+    ./vendor/bin/sail exec laravel.test ./vendor/bin/phpunit "$@"
+
+fi
