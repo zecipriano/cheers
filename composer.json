@@ -12,6 +12,7 @@
         "laravel/jetstream": "^2.5",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "league/flysystem-aws-s3-v3": "~1.0",
         "livewire/livewire": "^2.5"
     },
     "require-dev": {
@@ -23,6 +24,7 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
         "phpunit/phpunit": "^9.5.10",
+        "roave/security-advisories": "dev-latest",
         "slevomat/coding-standard": "^7.0",
         "squizlabs/php_codesniffer": "^3.6"
     },
