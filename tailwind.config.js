@@ -11,7 +11,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Work Sans', ...defaultTheme.fontFamily.sans],
+                sans: ['League Spartan', ...defaultTheme.fontFamily.sans],
             },
         },
     },
