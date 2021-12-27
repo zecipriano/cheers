@@ -21,3 +21,11 @@ mix.js('resources/js/app.js', 'public/js')
 if (mix.inProduction()) {
     mix.version();
 }
+
+const bsOpen = (process.env.MIX_BS_OPEN.toLowerCase() === 'true');
+
+mix.browserSync({
+    host: process.env.MIX_BS_LOCALHOST,
+    proxy: process.env.MIX_BS_PROXY,
+    open: bsOpen
+});
