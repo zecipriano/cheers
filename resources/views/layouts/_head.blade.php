@@ -6,7 +6,7 @@
     <title>{{ config('app.name', 'Cheers') }}</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="{{ mix('fonts/league-spartan/league-spartan.css') }}">
+    <link rel="stylesheet" href="{{ mix('fonts/league-spartan/league-spartan.min.css') }}">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
