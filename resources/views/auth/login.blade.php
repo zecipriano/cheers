@@ -28,13 +28,13 @@
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
                     <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-stone-600 dark:text-stone-400">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm text-stone-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="text-sm text-amber-700 hover:text-amber-900 hover:underline dark:text-amber-600 dark:hover:text-amber-100" href="{{ route('password.request') }}">
+                    <a class="text-sm text-amber-700 hover:text-amber-900 hover:underline" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif

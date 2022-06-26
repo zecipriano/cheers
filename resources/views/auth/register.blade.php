@@ -47,7 +47,7 @@
             @endif
 
             <div class="flex items-center justify-end mt-4">
-                <a class="text-sm text-amber-700 hover:text-amber-900 hover:underline dark:text-amber-600 dark:hover:text-amber-100" href="{{ route('login') }}">
+                <a class="text-sm text-amber-700 hover:text-amber-900 hover:underline" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 
