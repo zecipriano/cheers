@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{{ mix('fonts/league-spartan/league-spartan.min.css') }}">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/tw.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/style.css') }}">
 
     @livewireStyles
 

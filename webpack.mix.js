@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,10 +14,13 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .minify('public/fonts/league-spartan/league-spartan.css')
-    .postCss('resources/css/app.css', 'public/css', [
+    .postCss('resources/css/tw.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
-    ]);
+    ])
+    .sass('resources/scss/style.scss', 'public/css')
+    .purgeCss()
+    .sourceMaps(false, 'inline-source-map');
 
 if (mix.inProduction()) {
     mix.version();
